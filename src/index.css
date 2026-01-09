@@ -1,0 +1,24 @@
+/* html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+} */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  width: 100%;
+}
+
+:root {
+  --logoFont: "Amaranth", sans-serif;
+  --header2: "Vidaloka", serif;
+  --textFont: "Mona Sans", sans-serif;
+  --fancyText: "Yesteryear", cursive;
+  --lighterBlack: rgba(0, 0, 0, 0.737);
+}

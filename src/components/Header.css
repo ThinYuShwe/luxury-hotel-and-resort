@@ -1,0 +1,143 @@
+.header {
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  width: 90%;
+  /* position: sticky; */
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 1.5rem;
+  z-index: 100;
+  padding: 0.3rem 0.8rem;
+  border-radius: 0.3rem;
+  border: 1px solid rgba(0, 0, 0, 0.184);
+}
+
+.header-brand {
+  /* border: 4px solid purple; */
+  font-family: var(--logoFont);
+  font-size: 1.3rem;
+  font-weight: b200;
+  font-style: normal;
+  text-decoration: none;
+  color: black;
+}
+
+.header-brand-mobile-menu {
+  font-family: var(--logoFont);
+  font-size: 1.3rem;
+  font-weight: b200;
+  font-style: normal;
+}
+
+.header-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  display: none;
+}
+
+.header-nav-list {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  /* border: 5px solid orange; */
+  list-style-type: none;
+  font-size: 0.9rem;
+}
+
+.header-nav-item {
+  text-decoration: none;
+  color: black;
+  text-transform: uppercase;
+}
+
+.hamburger {
+  /* border: 1px solid red; */
+  width: 2rem;
+  display: block;
+  cursor: pointer;
+}
+
+.header-cta {
+  background-color: green;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.2rem;
+}
+
+.close-icon {
+  width: 1.5rem;
+  align-self: flex-end;
+  cursor: pointer;
+}
+
+.mobile-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+  padding: 2rem;
+  z-index: 200;
+}
+
+.mobile-menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  position: absolute;
+  padding: 1.5rem;
+  top: 2rem;
+  left: 0;
+}
+
+.mobile-menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mobile-menu-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  list-style-type: none;
+  margin-top: 4rem;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.mobile-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  list-style-type: none;
+  align-items: center;
+}
+
+@media screen and (min-width: 800px) {
+  .header-nav {
+    display: flex;
+  }
+
+  .hamburger {
+    display: none;
+  }
+}

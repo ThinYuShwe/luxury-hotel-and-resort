@@ -1,0 +1,517 @@
+.wellness-page-intro,
+.wellness-pool,
+.wellness-page-figure,
+.spa-figure,
+.spa-figures,
+.spa-article,
+.wellness-page-heat,
+.wellness-page-figure-caption {
+  padding: 1.5rem;
+  padding-bottom: 0rem;
+}
+
+.wellness-hero {
+  /* border: 4px solid green; */
+  width: 100%;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+figure {
+  margin-top: 0;
+}
+
+.wellness-hero-image {
+  /* border: 4px solid red; */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: blur(1px) saturate(100%) brightness(66%);
+  position: absolute;
+  top: 0;
+}
+
+.wellness-hero-caption {
+  /* border: 4px solid blue; */
+  z-index: 2;
+  position: absolute;
+  bottom: 2.5rem;
+  left: 2rem;
+  color: white;
+}
+
+.wellness-hero-subtitle {
+  font-size: 2rem;
+}
+
+.wellness-hero-title {
+  font-size: 3.6rem;
+}
+
+.wellness-page-intro {
+  /* border: 4px solid orange; */
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.wellness-page-intro-title {
+  font-size: 3rem;
+  font-weight: 100;
+  color: var(--lighterBlack);
+}
+
+.wellness-page-intro-text {
+  font-size: 1.2rem;
+  line-height: 2rem;
+  color: var(--lighterBlack);
+  font-family: var(--textFont);
+}
+
+.wellness-pool {
+  margin-bottom: 1rem;
+}
+
+.wellness-page-figure {
+  /* border: 4px solid purple; */
+  margin-top: 7rem;
+}
+
+.wellness-page-figure-images {
+  /* border: 6px solid pink; */
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.wellness-page-image-wrapper {
+  flex: 1;
+}
+
+.wellness-page-figure-image {
+}
+
+.wellness-page-figure-caption {
+  /* border: 4px solid brown; */
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.wellness-page-figure-title {
+  font-size: 3rem;
+  font-weight: 100;
+  color: var(--lighterBlack);
+}
+
+.wellness-page-figure-text {
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  color: var(--lighterBlack);
+}
+
+.spa-section-desktop {
+  display: none;
+}
+
+.spa-figure {
+}
+
+.spa-figures {
+  /* border: 4px solid red; */
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+}
+
+.spa-figure-image-wrapper {
+  flex: 1;
+}
+
+.spa-figure-image {
+  height: 100%;
+}
+
+.spa-article {
+  /* border: 4px solid blue; */
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.spa-article-title {
+  font-size: 3rem;
+  font-weight: 100;
+  color: var(--lighterBlack);
+}
+
+.spa-article-text {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  color: var(--lighterBlack);
+}
+
+.wellness-page-heat {
+  /* border: 4px solid green; */
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.wellness-page-heat-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.wellness-page-heat-image {
+  display: flex;
+  align-items: center;
+}
+
+.wellness-page-heat-figure {
+  /* height: 290px; */
+  object-fit: cover;
+  object-position: center;
+}
+
+.wellness-page-heat-title {
+  font-size: 3rem;
+  font-weight: 100;
+  color: var(--lighterBlack);
+}
+
+.wellness-page-small-heat-image {
+  display: none;
+}
+
+.wellness-page-heat-text {
+  font-size: 1rem;
+  line-height: 1.6rem;
+  font-family: var(--textFont);
+}
+
+.sauna-article,
+.heat-article {
+  /* border: 4px solid orange; */
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sauna-section-title {
+  font-size: 3rem;
+  font-weight: 100;
+  color: var(--lighterBlack);
+}
+
+.sauna-section-text {
+  font-size: 1rem;
+  line-height: 1.6rem;
+  color: var(--lighterBlack);
+  font-family: var(--textFont);
+}
+
+.view-section {
+  /* border: 4px solid red; */
+  margin-top: 2.8rem;
+}
+
+.view-figure {
+  position: relative;
+}
+
+.view-figure-image {
+  /* border: 4px solid blue; */
+}
+
+.view-figure-caption {
+  position: absolute;
+  bottom: 2rem;
+  z-index: 10;
+  /* border: 10px solid orange; */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: white;
+  gap: 0.5rem;
+}
+
+.view-figure-caption:hover {
+  text-decoration: none;
+}
+
+.view-figure-subtitle {
+  text-transform: uppercase;
+}
+
+.view-figure-title {
+  font-size: 2rem;
+}
+
+.view-figure-text {
+  font-size: 1rem;
+}
+
+.view-figure-buttons {
+  display: flex;
+  gap: 1rem;
+  /* margin-top: 1rem; */
+}
+
+.view-figure-button {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  padding: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.823);
+  border: none;
+  cursor: pointer;
+}
+
+.wellness-section-collection {
+  background-color: white;
+  width: 100%;
+  position: relative;
+  z-index: 11;
+}
+
+@media screen and (min-width: 1024px) {
+  .wellness-page-intro,
+  .wellness-pool,
+  .wellness-page-figure,
+  .spa-figure,
+  .spa-figures,
+  .spa-article,
+  .wellness-page-heat,
+  .spa-section-desktop {
+    padding: 9rem;
+    padding-bottom: 0rem;
+    padding-top: 0rem;
+  }
+
+  figure {
+    margin-top: 0;
+  }
+
+  .wellness-hero-caption {
+    bottom: 4rem;
+    left: 9rem;
+  }
+
+  .wellness-hero-subtitle {
+    font-size: 2.5rem;
+  }
+
+  .wellness-hero-title {
+    font-size: 6rem;
+  }
+
+  .wellness-page-intro {
+    margin: 0 auto;
+    width: 90%;
+    padding-top: 7rem;
+  }
+
+  .wellness-page-intro-title {
+    font-size: 5rem;
+  }
+
+  .wellness-page-intro-text {
+    font-size: 1.8rem;
+    line-height: 2.7rem;
+  }
+
+  .wellness-page-figure {
+    /* border: 10px solid green; */
+    position: relative;
+  }
+
+  .wellness-page-figure-images {
+    /* border: 10px solid purple; */
+  }
+
+  .wellness-page-figure-caption {
+    position: absolute;
+    top: 2rem;
+    background-color: white;
+    width: 40%;
+    padding: 2rem;
+  }
+
+  .wellness-page-figure-title {
+    font-size: 5rem;
+  }
+
+  .wellness-page-figure-text {
+    font-size: 1.35rem;
+    line-height: 2rem;
+  }
+
+  .wellness-page-image-wrapper {
+    /* border: 4px solid red; */
+  }
+
+  .wellness-page-first-image-wrapper {
+    /* border: 10px solid red; */
+  }
+
+  .spa-section {
+    display: none;
+  }
+
+  .spa-section-desktop {
+    display: block;
+    /* border: 4px solid red; */
+    margin-top: 7rem;
+  }
+
+  .spa-figure-desktop {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .spa-figure-caption-desktop {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 50%;
+  }
+
+  .spa-figure-desktop-image-wrapper {
+    width: 71.5%;
+  }
+
+  .spa-figure-title-desktop {
+    font-size: 4rem;
+    font-weight: 100;
+    color: var(--lighterBlack);
+  }
+
+  .spa-figure-text-desktop {
+    font-size: 1.1rem;
+    line-height: 1.9rem;
+    color: var(--lighterBlack);
+    font-family: var(--textFont);
+  }
+
+  .spa-figure-image-desktop {
+    height: 600px;
+    flex: 1;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .spa-figures-desktop {
+    display: flex;
+    flex-direction: row;
+    margin-top: 2rem;
+    align-items: flex-end;
+
+    /* border: 1px solid blue; */
+  }
+
+  .spa-figures-desktop-image-wrapper {
+    /* border: 10px solid blue; */
+    flex: 1;
+    height: 450px;
+  }
+
+  .spa-figures-desktop-image1 {
+    height: 578px;
+    object-fit: cover;
+    object-position: center;
+    transform: translateY(-8rem);
+    border-top: 20px solid white;
+    border-right: 20px solid white;
+  }
+
+  .spa-figures-desktop-image {
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .wellness-page-heat {
+    display: flex;
+    flex-direction: row;
+    gap: 7rem;
+    padding: 2.6rem;
+    padding-top: 8rem;
+  }
+
+  .wellness-page-heat-image {
+    flex: 1;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .wellness-page-heat-figure {
+    height: 70%;
+  }
+
+  .wellness-page-heat-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* border: 4px solid red; */
+  }
+
+  .heat-article,
+  .sauna-article {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+  }
+
+  .wellness-page-heat-title,
+  .sauna-section-title {
+    font-size: 5rem;
+  }
+
+  .wellness-page-heat-text,
+  .sauna-section-text {
+    font-size: 1.2rem;
+    line-height: 2.2rem;
+  }
+
+  .wellness-page-small-heat-image {
+    margin-left: -10rem;
+    width: 70%;
+    border: 20px solid white;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    display: block;
+  }
+
+  .view-section {
+    margin-top: 4rem;
+  }
+
+  .view-figure-caption {
+    padding: 3rem;
+    gap: 1rem;
+  }
+
+  .view-figure-title {
+    font-size: 3.5rem;
+  }
+
+  .view-figure-text {
+    font-size: 1.4rem;
+  }
+
+  .view-figure-buttons {
+    margin-top: 1rem;
+  }
+}
