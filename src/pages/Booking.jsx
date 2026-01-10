@@ -46,7 +46,7 @@ export function Booking() {
                 <label htmlFor="noOfGuest" className="form-label">
                   No. of guest
                 </label>
-                <input type="number" id="noOfGuest" className="form-input" />
+                <input type="number" id="noOfGuest" className="form-input" min="1" />
               </div>
 
               <div className="form-group">
