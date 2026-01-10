@@ -12,7 +12,7 @@ import { Rooms } from "./pages/Rooms.jsx";
 function App() {
   return (
     <Routes>
-      <Route index element={<HomePage />} />
+      <Route path="/" element={<HomePage />} />
       <Route path="/homePage" element={<HomePage />} />
       <Route path="/rooms" element={<Rooms />} />
       <Route path="/activities" element={<ActivitiesPage />} />
