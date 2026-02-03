@@ -20,7 +20,7 @@ export function Header() {
             Nivara
           </NavLink>
 
-          <div className="header-nav">
+          <nav className="header-nav" aria-label="Header Navigation">
             <ul className="header-nav-list">
               <li className="header-nav-list-item">
                 <NavLink to="/rooms" className="header-nav-item">
@@ -57,7 +57,7 @@ export function Header() {
             >
               Reserve your stay
             </button>
-          </div>
+          </nav>
         </>
       )}
 

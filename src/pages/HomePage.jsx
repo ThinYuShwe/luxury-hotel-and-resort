@@ -5,29 +5,11 @@ import { Footer } from "../components/Footer";
 import { useNavigate } from "react-router-dom";
 import { MomentSection } from "../components/MomentSection";
 import { useState } from "react";
-
+import { homePageData } from "./HomePageData";
 // import mainBg from "../assets/homePage/mainHomePage.jpg";
 import mainBg2 from "../assets/homePage/main2.avif";
-import guestRoom3 from "../assets/homePage/guest-room3.jpg";
-import wellness from "../assets/homePage/wellness.jpg";
 import remove from "../assets/homePage/remove.png";
-import experience1 from "../assets/homePage/experience1.jpg";
-import experience2 from "../assets/homePage/experience2.jpg";
-import adventure1 from "../assets/homePage/adventure1.jpg";
-import adventure2 from "../assets/homePage/adventure2.jpg";
-import food1 from "../assets/homePage/food1.jpg";
-import food2 from "../assets/homePage/food2.jpg";
-import meetings1 from "../assets/homePage/meetings1.avif";
-import meetings2 from "../assets/homePage/meetings2.avif";
-import discover from "../assets/homePage/discover.avif";
-import room1 from "../assets/homePage/room1.jpg";
 
-import golf1 from "../assets/homePage/golf1.avif";
-import view1 from "../assets/homePage/view1.webp";
-import swimmingPool from "../assets/homePage/swimmingPool.webp";
-import heat from "../assets/homePage/heat.jpg";
-import care from "../assets/homePage/care.avif";
-import bathroom from "../assets/homePage/bathroom.png";
 import plus from "../assets/homePage/plus.png";
 
 export function HomePage() {
@@ -51,11 +33,6 @@ export function HomePage() {
       <div className="sectionCollection">
         <section className="about">
           <h2 className="about-title">About Us</h2>
-          {/* <p className="about-description">
-            A breathtaking eco-hotel and premier event destination for
-            adventurers, artists, and digital nomads seeking inspiration and
-            personal transformation.
-          </p> */}
           <p className="about-description">
             <span className="line">
               A breathtaking eco-hotel and premier event destination
@@ -71,332 +48,127 @@ export function HomePage() {
 
         <section className="stay">
           <div className="stay-main">
-            <h2 className="stay-title">Stay With Us</h2>
+            <h2 className="stay-title">{homePageData.stay.main.title}</h2>
             <p className="stay-description">
-              Experience sophistication in our elegantly designed rooms and
-              suites, where contemporary style meets timeless charm. Enjoy
-              spacious interiors, modern furnishings, and breathtaking natural
-              views — your serene escape.
+              {homePageData.stay.main.description}
             </p>
           </div>
-          <section className="image-section">
-            <article className="image-card slide-up">
-              <figure className="image-card-media">
-                <img
-                  src={guestRoom3}
-                  alt="Guest room interior"
-                  className="guest-room3"
-                />
-                <figcaption className="image-card-caption">
-                  <h3 className="image-card-title">Rooms</h3>
-                  <button
-                    type="button"
-                    className="image-card-button"
-                    onClick={() => navigate("/roomsAvailable")}
-                  >
-                    View Rooms
-                  </button>
-                </figcaption>
-              </figure>
-            </article>
 
-            <article className="image-card slide-up">
-              <figure className="image-card-media">
-                <img
-                  src={wellness}
-                  alt="A girl sitting in a bathtub"
-                  className="wellness"
-                />
-                <figcaption className="image-card-caption">
-                  <h3 className="image-card-title">Wellness</h3>
-                  <button className="image-card-button">View Packages</button>
-                </figcaption>
-              </figure>
-            </article>
+          <section className="image-section">
+            {homePageData.stay.cards.map((card, index) => (
+              <article key={index} className="image-card slide-up">
+                <figure className="image-card-media">
+                  <img
+                    src={card.imgSrc}
+                    alt={card.imgAlt}
+                    className={index === 0 ? "guest-room3" : "wellness"}
+                  />
+                  <figcaption className="image-card-caption">
+                    <h3 className="image-card-title">{card.title}</h3>
+                    <button
+                      className="image-card-button"
+                      onClick={
+                        card.title === "Rooms"
+                          ? () => navigate("/roomsAvailable")
+                          : undefined
+                      }
+                    >
+                      {card.buttonText}
+                    </button>
+                  </figcaption>
+                </figure>
+              </article>
+            ))}
           </section>
         </section>
 
         <section className="offerings-section">
-          <article className="offerings-card experience-card">
-            <div className="card-header">
-              <h2 className="card-title">Experiences</h2>
-              <div className="icons">
-                {/* <img
-                  src={remove}
-                  alt="Close section"
-                  className="card-close-icon"
-                />
-                <img
-                  src={plus}
-                  alt="plus icon"
-                  className="card-open-icon"
-                  onClick={() => setOpen(true)}
-                /> */}
-                <img
-                  src={openCards.experience ? remove : plus}
-                  alt=""
-                  className="card-openClose-icon"
+          {homePageData.offerings.map((item, index) => (
+            <article key={index} className="offerings-card">
+              <div className="card-header">
+                <h2 className="card-title">{item.title}</h2>
+                <button
+                  className="icon-button"
                   onClick={() =>
                     setOpenCards((prev) => ({
                       ...prev,
-                      experience: !prev.experience,
+                      [index]: !prev[index],
                     }))
                   }
-                />
+                >
+                  <img src={openCards[index] ? remove : plus} alt="toggle" />
+                </button>
               </div>
-            </div>
-            {openCards.experience && (
-              <>
-                <p className="card-description">
-                  Every experience is crafted to elevate your stay beyond the
-                  ordinary. From curated cultural journeys to immersive wellness
-                  rituals and adventure-filled excursions, each moment is
-                  designed to help you unwind.
-                </p>
-                <figure className="card-gallery">
-                  <img
-                    src={experience1}
-                    alt="Fancy outdoor restaurant"
-                    className="card-image"
-                  />
-                  <img src={experience2} alt="Kitchen" className="card-image" />
-                </figure>
-              </>
-            )}
-          </article>
 
-          <article className="offerings-card adventures-card">
-            <div className="card-header">
-              <h2 className="card-title">Adventure Activities</h2>
-              <div className="icons">
-                {/* <img
-                  src={remove}
-                  alt="Close section"
-                  className="card-close-icon"
-                />
-                <img
-                  src={plus}
-                  alt="plus icon"
-                  className="card-open-icon"
-                  onClick={() => setOpenCards(true)}
-                /> */}
-                {/* if the openCards.experience is true, it will show the remove icon, 
-                meaning the card description will be shown and it will show the plus icon 
-                when it is false and the card description will be hidden */}
-                <img
-                  src={openCards.adventure ? remove : plus}
-                  alt="toggle"
-                  className="card-openClose-icon"
-                  onClick={() =>
-                    setOpenCards((prev) => ({
-                      ...prev,
-                      adventure: !prev.adventure,
-                    }))
-                  }
-                />
-              </div>
-            </div>
-            {openCards.adventure && (
-              <>
-                <p className="card-description">
-                  Enjoy outdoor adventures that blend excitement with
-                  breathtaking scenery. From scenic treks to water activities,
-                  each experience energizes your stay and creates lasting
-                  memories.
-                </p>
-                <figure className="card-gallery">
-                  <img
-                    src={adventure1}
-                    alt="A couple climbing mountains"
-                    className="card-image"
-                  />
-                  <img
-                    src={adventure2}
-                    alt="Outdoor Camping"
-                    className="card-image"
-                  />
-                </figure>
-              </>
-            )}
-          </article>
+              {openCards[index] && (
+                <>
+                  <p className="card-description">{item.content}</p>
 
-          <article className="offerings-card food-card">
-            <div className="card-header">
-              <h2 className="card-title">Foods & Drinks</h2>
-              <div className="icons">
-                {/* <img
-                  src={remove}
-                  alt="Close section"
-                  className="card-close-icon"
-                />
-                <img
-                  src={plus}
-                  alt="plus icon"
-                  className="card-open-icon"
-                  onClick={() => setOpen(false)}
-                /> */}
-                <img
-                  src={openCards.food ? remove : plus}
-                  alt=""
-                  className="card-openClose-icon"
-                  onClick={() =>
-                    setOpenCards((prev) => ({
-                      ...prev,
-                      food: !prev.food,
-                    }))
-                  }
-                />
-              </div>
-            </div>
-            {openCards.food && (
-              <>
-                <p className="card-description">
-                  Savor dishes and drinks crafted with fresh, local ingredients
-                  and global flair. From gourmet meals to casual bites and
-                  signature cocktails, every flavor enhances your stay.
-                </p>
-                <figure className="card-gallery">
-                  <img src={food1} alt="Food" className="card-image" />
-                  <img
-                    src={food2}
-                    alt="Two women holding glass of wine"
-                    className="card-image"
-                  />
-                </figure>
-              </>
-            )}
-          </article>
-
-          <article className="offerings-card meeting-card">
-            <div className="card-header">
-              <h2 className="card-title">Meetings & Events</h2>
-              <div className="icons">
-                {/* <img
-                  src={remove}
-                  alt="Close section"
-                  className="card-close-icon"
-                />
-                <img
-                  src={plus}
-                  alt="plus icon"
-                  className="card-open-icon"
-                  onClick={() => setOpen(false)}
-                /> */}
-                <img
-                  src={openCards.meeting ? remove : plus}
-                  alt=""
-                  className="card-openClose-icon"
-                  onClick={() =>
-                    setOpenCards((prev) => ({
-                      ...prev,
-                      meeting: !prev.meeting,
-                    }))
-                  }
-                />
-              </div>
-            </div>
-            {openCards.meeting && (
-              <>
-                <p className="card-description">
-                  Elevate your gathering with stylish venues, modern amenities,
-                  and attentive service. Perfect for meetings, retreats, and
-                  celebrations, we make every event seamless and memorable.
-                </p>
-                <figure className="card-gallery">
-                  <img src={meetings1} alt="A room" className="card-image" />
-                  <img
-                    src={meetings2}
-                    alt="A group of people enjoying party"
-                    className="card-image"
-                  />
-                </figure>
-              </>
-            )}
-          </article>
+                  <figure className="card-gallery">
+                    {item.images.map((img, i) => (
+                      <img
+                        key={i}
+                        src={img.src}
+                        alt={img.alt}
+                        className="card-image"
+                      />
+                    ))}
+                  </figure>
+                </>
+              )}
+            </article>
+          ))}
         </section>
 
         <section className="discover-section">
           <figure className="discover-figure">
-            <img src={discover} alt="" className="discover-image zoom-in" />
+            <img
+              src={homePageData.discover.imgSrc}
+              alt={homePageData.discover.imgAlt}
+              className="discover-image zoom-in"
+            />
             <figcaption className="discover-caption">
-              <p className="discover-text">Unwind or discover your</p>
-              <p className="discover-text2">Personal Playground</p>
+              <p className="discover-text">{homePageData.discover.text1}</p>
+              <p className="discover-text2">{homePageData.discover.text2}</p>
             </figcaption>
           </figure>
         </section>
 
         <section className="room-highlight-section">
           <figure className="room-highlight-figure">
-            <img
-              src={room1}
-              alt="A clean room"
-              className="room-highlight-image"
-            />
-            <img
-              src={bathroom}
-              alt="A bathroom"
-              className="room-highlight-image-bathroom"
-            />
+            {homePageData.roomHightLight.images.map((img, index) => (
+              <img
+                key={index}
+                src={img.src}
+                alt={img.alt}
+                className={
+                  index === 0
+                    ? "room-highlight-image"
+                    : "room-highlight-image-bathroom"
+                }
+              />
+            ))}
+
             <figcaption className="room-highlight-caption">
               <p className="room-highlight-text">
-                We are the best five-star holiday hotel in Switzerland!
+                {homePageData.roomHightLight.text}
               </p>
             </figcaption>
           </figure>
         </section>
 
         <MomentSection />
-        {/* <section className="moments-section">
-          <div className="moments-figure">
-            <img
-              src={unforgettableMoments1}
-              alt="A couple having their moments while eating and talking"
-              className="moments-image"
-            />
-
-            <div className="moments-caption">
-              <div className="moment-text-main">
-                <h2 className="moments-title">
-                  Exclusive Stays, Unforgettable Moments
-                </h2>
-                <p className="moments-description">
-                  Nivara Hotels offers personalized stays tailored to your every
-                  need and desire. Our dedicated team works tirelessly to
-                  deliver an exclusive and unforgettable holiday experience at
-                  the iconic Hotel Aguere in the heart of Switzerland. With
-                  Nivara Hotels, you have the freedom to shape your getaway
-                  exactly the way you want.
-                </p>
-              </div>
-              <img
-                src={smallDate}
-                alt="A couple is dating"
-                className="moments-image2"
-              />
-              <div className="golf-text-main">
-                <h2 className="golf-title">Luxury Beyond the Ordinary</h2>
-                <p className="golf-description">
-                  Nivara Hotels presents exclusive five-star escapes in
-                  breathtaking locations—many right on the beachfront. Hotel
-                  Fariones 5* invites you to enjoy Puerto del Carmen’s three
-                  main beaches, lush surroundings, and an unforgettable
-                  atmosphere. It offers a serene family-friendly retreat with
-                  spacious rooms, world-class dining, and endless entertainment.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section> */}
-
         <section className="golf-section">
           <figure className="golf-figure">
             <figcaption className="golf-caption">
-              <p className="golf-overlay-subtitle">Swing Into Luxury</p>
-              <p className="golf-overlay-title">Golf Retreat</p>
+              <p className="golf-overlay-subtitle">
+                {homePageData.golf.subtitle}
+              </p>
+              <p className="golf-overlay-title">{homePageData.golf.title}</p>
             </figcaption>
             <img
-              src={golf1}
-              alt="A girl is wearing sports clothes and playing golf outside."
+              src={homePageData.golf.imgSrc}
+              alt={homePageData.golf.imgAlt}
               className="golf-image"
             />
           </figure>
@@ -405,25 +177,28 @@ export function HomePage() {
         <section className="rooms-view-section">
           <figure className="rooms-view-figure">
             <img
-              src={view1}
-              alt="A room with new view"
+              src={homePageData.roomsView.imgSrc}
+              alt={homePageData.roomsView.imgAlt}
               className="rooms-view-image"
             />
 
             <figcaption className="rooms-view-caption">
               <div className="rooms-view-main">
-                <h2 className="rooms-view-title">Rooms & View</h2>
+                <h2 className="rooms-view-title">
+                  {homePageData.roomsView.title}
+                </h2>
                 <p className="rooms-view-description">
-                  At Nivara, experience newly renovated rooms designed in
-                  soothing neutral tones with clean, minimalist lines—crafted to
-                  offer pure relaxation. Floor-to-ceiling panoramic windows let
-                  you savor the breathtaking beauty of South Tyrol as sunlight
-                  dances across the landscape throughout the day.
+                  {homePageData.roomsView.description}
                 </p>
               </div>
 
               <div className="rooms-view-cta">
-                <p className="rooms-view-cta-text">View Rooms</p>
+                <p
+                  className="rooms-view-cta-text"
+                  onClick={() => navigate("/roomsAvailable")}
+                >
+                  {homePageData.roomsView.ctaText}
+                </p>
               </div>
             </figcaption>
           </figure>
@@ -431,59 +206,25 @@ export function HomePage() {
 
         <section className="wellness-section">
           <div className="wellness-header">
-            <h2 className="wellness-title">Ultimate Wellness Escape</h2>
+            <h2 className="wellness-title">{homePageData.wellness.title}</h2>
             <p className="wellness-intro">
-              At Nivara, where every detail is designed for pure relaxation.
-              Surrounded by warm, calming tones, let the soothing waters and
-              gentle warmth melt your stress away. Recharge, and experience
-              wellness like never before.
+              {homePageData.wellness.description}
             </p>
           </div>
 
           <div className="wellness-cards">
-            <article className="wellness-card">
-              <img
-                src={swimmingPool}
-                alt="Indoor swimming pool"
-                className="wellness-image"
-              />
-              <p className="wellness-card-subtitle">Swimming Pool</p>
-              <h3 className="wellness-card-title">Water</h3>
-              <p className="wellness-card-description">
-                Immerse yourself in the warm embrace of the pool, where every
-                gentle ripple. Step in slowly, and let the serene beauty around
-                you captivate your senses.
-              </p>
-            </article>
-
-            <article className="wellness-card">
-              <img
-                src={heat}
-                alt="Steam and sauna area"
-                className="wellness-image"
-              />
-              <p className="wellness-card-subtitle">Steam & Sauna</p>
-              <h3 className="wellness-card-title">Heat</h3>
-              <p className="wellness-card-description">
-                Relax in our panoramic sauna, let the gentle warmth embrace you,
-                and enjoy the breathtaking views of the Dolomites.
-              </p>
-            </article>
-
-            <article className="wellness-card">
-              <img
-                src={care}
-                alt="A girl taking beauty treatment"
-                className="wellness-image"
-              />
-              <p className="wellness-card-subtitle">Care</p>
-              <h3 className="wellness-card-title">Beauty Care</h3>
-              <p className="wellness-card-description">
-                A wellness experience awaits at our beauty center, where
-                soothing treatments and rejuvenating massages merge with the
-                serene atmosphere to create something unforgettable.
-              </p>
-            </article>
+            {homePageData.wellness.cards.map((card, index) => (
+              <article key={index} className="wellness-card">
+                <img
+                  src={card.imgSrc}
+                  alt={card.imgAlt}
+                  className="wellness-image"
+                />
+                <p className="wellness-card-subtitle">{card.subtitle}</p>
+                <h3 className="wellness-card-title">{card.title}</h3>
+                <p className="wellness-card-description">{card.description}</p>
+              </article>
+            ))}
           </div>
         </section>
       </div>

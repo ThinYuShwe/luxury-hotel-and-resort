@@ -131,7 +131,7 @@ export function Contact() {
               ></textarea>
             </div>
 
-            <button>Send Message</button>
+            <button className="contact-button">Send Message</button>
           </form>
         </section>
 

@@ -28,12 +28,12 @@ export function Blog() {
 
       <section className="figures">
         <div className="figures-part1">
-          <figure className="figure-1">
+          <figure className="figure-1 figure-div">
             <div className="figure-1-image-wrapper">
               <img
                 src={img1}
                 alt="Outdoor adventure activities near the resort"
-                className="figure-1-image"
+                className="figure-1-image figure-div-image"
               />
             </div>
             <figcaption className="figure-1-caption">
@@ -41,12 +41,12 @@ export function Blog() {
             </figcaption>
           </figure>
 
-          <figure className="figure-2">
+          <figure className="figure-2 figure-div">
             <div className="figure-2-image-wrapper">
               <img
                 src={img2}
                 alt="Experience adventure like never before"
-                className="figure-2-image"
+                className="figure-2-image figure-div-image"
               />
             </div>
             <figcaption className="figure-2-caption">
@@ -54,12 +54,12 @@ export function Blog() {
             </figcaption>
           </figure>
 
-          <figure className="figure-3">
+          <figure className="figure-3 figure-div">
             <div className="figure-3-image-wrapper">
               <img
                 src={img3}
                 alt="Vacation meets heart-pounding excitement"
-                className="figure-3-image"
+                className="figure-3-image figure-div-image"
               />
             </div>
             <figcaption className="figure-3-caption">
@@ -68,12 +68,12 @@ export function Blog() {
           </figure>
         </div>
         <div className="figures-part2">
-          <figure className="figure-4">
+          <figure className="figure-4 figure-div">
             <div className="figure-4-image-wrapper">
               <img
                 src={img4}
                 alt="Experience the wild adventures in luxury"
-                className="figure-4-image"
+                className="figure-4-image figure-div-image"
               />
             </div>
             <figcaption className="figure-4-caption">
@@ -81,12 +81,12 @@ export function Blog() {
             </figcaption>
           </figure>
 
-          <figure className="figure-5">
+          <figure className="figure-5 figure-div">
             <div className="figure-5-image-wrapper">
               <img
                 src={img5}
                 alt="From mountain peaks to ocean waves"
-                className="figure-5-image"
+                className="figure-5-image figure-div-image"
               />
             </div>
             <figcaption className="figure-5-caption">
@@ -94,12 +94,12 @@ export function Blog() {
             </figcaption>
           </figure>
 
-          <figure className="figure-6">
+          <figure className="figure-6 figure-div">
             <div className="figure-6-image-wrapper">
               <img
                 src={img6}
                 alt="From sunrise peaks to sunset waves"
-                className="figure-6-image"
+                className="figure-6-image figure-div-image"
               />
             </div>
             <figcaption className="figure-6-caption">
@@ -108,12 +108,12 @@ export function Blog() {
           </figure>
         </div>
         <div className="figures-part3">
-          <figure className="figure-7">
+          <figure className="figure-7 figure-div">
             <div className="figure-7-image-wrapper">
               <img
                 src={img7}
                 alt="Chase sunsets and adrenaline together"
-                className="figure-7-image"
+                className="figure-7-image figure-div-image"
               />
             </div>
             <figcaption className="figure-7-caption">
@@ -121,12 +121,12 @@ export function Blog() {
             </figcaption>
           </figure>
 
-          <figure className="figure-8">
+          <figure className="figure-8 figure-div">
             <div className="figure-8-image-wrapper">
               <img
                 src={img8}
                 alt="Dive, climb, and explore on your dream getaway"
-                className="figure-8-image"
+                className="figure-8-image figure-div-image"
               />
             </div>
             <figcaption className="figure-8-caption">
@@ -134,12 +134,12 @@ export function Blog() {
             </figcaption>
           </figure>
 
-          <figure className="figure-9">
+          <figure className="figure-9 figure-div">
             <div className="figure-9-image-wrapper">
               <img
                 src={img9}
                 alt="Escape, explore, and indulge in luxury"
-                className="figure-9-image"
+                className="figure-9-image figure-div-image"
               />
             </div>
             <figcaption className="figure-9-caption">

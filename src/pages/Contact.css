@@ -239,7 +239,7 @@
   /* styles will go here */
 }
 
-button {
+.contact-button {
   background-color: rgb(82, 82, 82);
   color: white;
   border: none;
@@ -248,7 +248,7 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.contact-button:hover {
   background-color: green;
 }
 

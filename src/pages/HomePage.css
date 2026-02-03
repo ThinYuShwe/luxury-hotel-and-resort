@@ -257,9 +257,11 @@
   opacity: 0.8;
 }
 
-.card-openClose-icon {
-  width: 1rem;
+.icon-button {
+  background-color: white;
+  border: none;
   cursor: pointer;
+  width: 1rem;
 }
 
 /* Card description */
@@ -508,6 +510,7 @@
 .rooms-view-cta-text {
   color: green;
   text-transform: uppercase;
+  cursor: pointer;
 }
 
 /* Section */
