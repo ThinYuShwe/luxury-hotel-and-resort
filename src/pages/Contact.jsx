@@ -2,7 +2,7 @@ import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import "./Contact.css";
 import "../index.css";
-import mainBg from "../assets/contact/mainBg.jpg";
+import mainBg from "../assets/contact/mainbg.jpg";
 import dining from "../assets/contact/dining.jpg";
 
 export function Contact() {
