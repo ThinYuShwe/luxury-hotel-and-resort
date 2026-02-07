@@ -57,6 +57,7 @@
   font-weight: 500;
   border-radius: 0.3rem;
   border: none;
+  cursor: pointer;
 }
 
 .footer-nav-list {
@@ -65,6 +66,12 @@
   flex-direction: column;
   gap: 0.7rem;
   list-style-type: none;
+}
+
+.footer-link a{
+  text-decoration: none;
+  cursor: pointer;
+  color: rgb(255, 255, 255);
 }
 
 .site-footer-main2 {

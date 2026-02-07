@@ -1,6 +1,7 @@
 import "./Footer.css";
 import "../index.css";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 // import footer from "../assets/homePage/footeravif";
 
 export function Footer() {
@@ -22,12 +23,21 @@ export function Footer() {
         </div>
         <nav className="footer-nav">
           <ul className="footer-nav-list">
-            <li className="footer-link">Home</li>
-            <li className="footer-link">Rooms & Stay</li>
-            <li className="footer-link">Wellness & Spa</li>
-            <li className="footer-link">About Hotel</li>
-            <li className="footer-link">Blog Articles</li>
-            <li className="footer-link">Reservation</li>
+            <li className="footer-link">
+              <Link to="/">Home</Link>
+            </li>
+            <li className="footer-link">
+              <Link to="/rooms">Rooms & Stay</Link>
+            </li>
+            <li className="footer-link">
+              <Link to="/wellness">Wellness & Spa</Link>
+            </li>
+            <li className="footer-link">
+              <Link to="/blog">Blog Articles</Link>
+            </li>
+            <li className="footer-link">
+              <Link to="/booking">Reservation</Link>
+            </li>
           </ul>
         </nav>
       </div>
